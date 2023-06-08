@@ -64,7 +64,7 @@ export default function CheckoutPage() {
             <h3 className="font-bold text-lg">{productInfo.name}</h3>
             <p className="text-sm leading-4 text-gray-500">{productInfo.description}</p>
             <div className="flex mt-1">
-              <div className="grow font-bold">${productInfo.price}</div>
+              <div className="grow font-bold">{productInfo.price} lei</div>
               <div>
                 <button onClick={() => lessOfThisProduct(productInfo._id)} className="border border-emerald-500 px-2 rounded-lg text-emerald-500">-</button>
                 <span className="px-2">
