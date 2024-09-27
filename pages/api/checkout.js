@@ -7,7 +7,7 @@ export default async function handler(req,res) {
   await initMongoose();
 
   if (req.method !== 'POST') {
-    res.json('should a post but its not!');
+    res.json('Nu lucreaza post!');
     return;
   }
 
@@ -23,7 +23,7 @@ export default async function handler(req,res) {
     line_items.push({
       quantity,
       price_data: {
-        currency: 'USD',
+        currency: 'MD',
         product_data: {name:product.name},
         unit_amount: product.price * 100,
       },
