@@ -16,7 +16,7 @@ export default function Layout({children}) {
       <div className="p-5">
         {success && (
           <div className="mb-5 bg-green-400 text-white text-lg p-5 rounded-xl">
-            Multumim pentru comanda!
+            Благодарим за заказ!
           </div>
         )}
         {children}
