@@ -16,8 +16,8 @@ export default function Home({products}) {
 
   return (
     <Layout>
-      <h1 className="text-center text-2xl font-bold text-emerald-800 "> Magazin de Telefoane </h1>
-      <input value={phrase} onChange={e => setPhrase(e.target.value)} type="text" placeholder="Căutare..." className="bg-gray-200 w-full py-2 px-4 rounded-xl"/>
+      <h1 className="text-center text-2xl font-bold text-emerald-800 "> Numina </h1>
+      <input value={phrase} onChange={e => setPhrase(e.target.value)} type="text" placeholder="Поиск..." className="bg-gray-200 w-full py-2 px-4 rounded-xl"/>
       <div>
         {categoriesNames.map(categoryName => (
           <div key={categoryName}>

@@ -78,27 +78,27 @@ export default function CheckoutPage() {
       )})}
       <form onSubmit={handleSubmit} method="POST">
         <div className="mt-8">
-          <input name="address" value={address} onChange={e => setAddress(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Strada"/>
-          <input name="city" value={city} onChange={e => setCity(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Oraș"/>
-          <input name="name" value={name} onChange={e => setName(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Nume și Prenume vostru"/>
-          <input name="email" value={email} onChange={e => setEmail(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="email" placeholder="Adresa email"/>
+          <input name="address" value={address} onChange={e => setAddress(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Улица"/>
+          <input name="city" value={city} onChange={e => setCity(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Город"/>
+          <input name="name" value={name} onChange={e => setName(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="text" placeholder="Имя/Фамилия"/>
+          <input name="email" value={email} onChange={e => setEmail(e.target.value)} className="bg-gray-100 w-full rounded-lg px-4 py-2 mb-2" type="email" placeholder="Электронная почта"/>
         </div>
         <div className="mt-8">
           <div className="flex my-3">
-            <h3 className="grow font-bold text-gray-400">Subtotal:</h3>
-            <h3 className="font-bold">{subtotal} lei</h3>
+            <h3 className="grow font-bold text-gray-400">Товары:</h3>
+            <h3 className="font-bold">{subtotal} лей</h3>
           </div>
           <div className="flex my-3">
-            <h3 className="grow font-bold text-gray-400">Livrare:</h3>
-            <h3 className="font-bold">{deliveryPrice} lei</h3>
+            <h3 className="grow font-bold text-gray-400">Доставка:</h3>
+            <h3 className="font-bold">{deliveryPrice} лей</h3>
           </div>
           <div className="flex my-3 border-t pt-3 border-dashed border-emerald-500">
-            <h3 className="grow font-bold text-gray-400">Total:</h3>
-            <h3 className="font-bold">{total} lei</h3>
+            <h3 className="grow font-bold text-gray-400">Общая:</h3>
+            <h3 className="font-bold">{total} лей</h3>
           </div>
         </div>
         <input type="hidden" name="products" value={selectedProducts.join(',')}/>
-        <button type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">Spre plată {total} lei</button>
+        <button type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">К оплате - {total} лей</button>
       </form>
     </Layout>
   );
