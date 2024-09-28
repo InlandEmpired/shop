@@ -30,7 +30,7 @@ export default function CheckoutPage() {
     }
   }
 
-  const deliveryPrice = 100;
+  const deliveryPrice = 50;
   let subtotal = 0;
   if (selectedProducts?.length) {
     for (let id of selectedProducts) {
@@ -50,7 +50,7 @@ export default function CheckoutPage() {
   return (
     <Layout>
       {!productsInfos.length && (
-        <div>Nu sunt produse în cartul vostru!</div>
+        <div>В корзине нет выбранного товара!</div>
       )}
       {productsInfos.length && productsInfos.map(productInfo => {
         const amount = selectedProducts.filter(id => id === productInfo._id).length;
@@ -66,11 +66,11 @@ export default function CheckoutPage() {
             <div className="flex mt-1">
               <div className="grow font-bold">{productInfo.price} lei</div>
               <div>
-                <button onClick={() => lessOfThisProduct(productInfo._id)} className="border border-emerald-500 px-2 rounded-lg text-emerald-500">-</button>
+                <button onClick={() => lessOfThisProduct(productInfo._id)} className="border border-orange-50-500 px-2 rounded-lg text-orange-500">-</button>
                 <span className="px-2">
                   {selectedProducts.filter(id => id === productInfo._id).length}
                 </span>
-                <button onClick={() => moreOfThisProduct(productInfo._id)} className="bg-emerald-500 px-2 rounded-lg text-white">+</button>
+                <button onClick={() => moreOfThisProduct(productInfo._id)} className="bg-orange-500 px-2 rounded-lg text-white">+</button>
               </div>
             </div>
           </div>
@@ -92,13 +92,13 @@ export default function CheckoutPage() {
             <h3 className="grow font-bold text-gray-400">Доставка:</h3>
             <h3 className="font-bold">{deliveryPrice} лей</h3>
           </div>
-          <div className="flex my-3 border-t pt-3 border-dashed border-emerald-500">
+          <div className="flex my-3 border-t pt-3 border-dashed border-orange-500">
             <h3 className="grow font-bold text-gray-400">Общая:</h3>
             <h3 className="font-bold">{total} лей</h3>
           </div>
         </div>
         <input type="hidden" name="products" value={selectedProducts.join(',')}/>
-        <button type="submit" className="bg-emerald-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-emerald-300 shadow-lg">К оплате - {total} лей</button>
+        <button type="submit" className="bg-orange-500 px-5 py-2 rounded-xl font-bold text-white w-full my-4 shadow-orange-300 shadow-lg">К оплате - {total} лей</button>
       </form>
     </Layout>
   );

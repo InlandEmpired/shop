@@ -16,14 +16,14 @@ export default function Home({products}) {
 
   return (
     <Layout>
-      <h1 className="text-center text-2xl font-bold text-emerald-800 "> Numina </h1>
+      <h1 className="text-center text-2xl font-bold text-orange-800 "> Numina.md - Реестр обоев </h1>
       <input value={phrase} onChange={e => setPhrase(e.target.value)} type="text" placeholder="Поиск..." className="bg-gray-200 w-full py-2 px-4 rounded-xl"/>
       <div>
         {categoriesNames.map(categoryName => (
           <div key={categoryName}>
             {products.find(p => p.category === categoryName) && (
               <div>
-                <h2 className="text-2xl py-5 capitalize text-emerald-600">{categoryName}</h2>
+                <h2 className="text-2xl py-5 capitalize text-orange-600">{categoryName}</h2>
                 <div className="flex -mx-5 overflow-x-scroll snap-x scrollbar-hide">
                   {products.filter(p => p.category === categoryName).map(productInfo => (
                     <div key={productInfo._id} className="px-5 snap-start">
